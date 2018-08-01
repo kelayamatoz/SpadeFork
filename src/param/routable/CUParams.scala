@@ -31,7 +31,7 @@ case class PCUParam (
   vectorFifoParam:FIFOParam=FIFOParam(size=option("fifo-depth")),
   numCtrs:Int=6,
   simdParam:Option[SIMDParam]=Some(DefaultSIMDParam(
-    numStages=6, 
+    numStages=option[Int]("pcu-stages"), 
     ops=allOps, 
     vectorized=true, 
     numRegs=16, 
@@ -72,7 +72,7 @@ case class PMUParam (
   sramParam:SRAMParam=SRAMParam(size=256 * 1024 / 4,4), // 256 kB
   numCtrs:Int=6,
   simdParam:Option[SIMDParam]=Some(DefaultSIMDParam(
-    numStages=4, 
+    numStages=option[Int]("pmu-stages"), 
     ops=fixOps ++ bitOps ++ otherOps, 
     vectorized=true, 
     numRegs=16, 

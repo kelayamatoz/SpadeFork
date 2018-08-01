@@ -18,4 +18,3 @@ case class PointToPointTopParam(
   val numTotalCols = numCols+fringeNumCols*2
   val networkParams = Nil
 }
-

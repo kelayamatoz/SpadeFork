@@ -29,6 +29,8 @@ object SpadeConfig extends prism.GlobalConfig {
   register[String]("topo", default="mesh", info="Network topology [mesh, torus, cmesh]")
   register[Int]("row", default=2, info="number of rows in network")
   register[Int]("col", default=2, info="number of columns in network")
+  register[Int]("pcu-stages", default=6, info="number of pipeline stages in pcu")
+  register[Int]("pmu-stages", default=4, info="number of pipeline stages in pmu")
   register[Boolean]("nn", default=false, info="enable nearest neighbor")
   register[Boolean]("dag", default=true, info="enable dram address generator in network")
   register[String]("pattern", default="checkerboard", info="Pattern in layout of different CU types. For topo=[mesh/torus] - [checkerboard,cstrip,rstrip,mixall,half&half], for topo=cmesh - [checkerboard]")
@@ -40,5 +42,4 @@ object SpadeConfig extends prism.GlobalConfig {
   register[Int]("vlink", default=4, info="Number of vector link between switches")
   register[Int]("slink", default=6, info="Number of scalar link between switches")
   register[Int]("vc", default=64, info="Number of virtual classes per network")
-
 }
